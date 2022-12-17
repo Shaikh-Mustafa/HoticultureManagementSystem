@@ -14,6 +14,7 @@ import { GalleryComponent } from './Public/Components/gallery/gallery.component'
 import { CategoryComponent } from './Public/Components/category/category.component';
 import { PublicComponent } from './Public/public.component';
 import { FooterComponent } from './Public/Components/footer/footer.component';
+import { CountUpDirective } from './count-up.directive';
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,6 +27,7 @@ import { FooterComponent } from './Public/Components/footer/footer.component';
     GalleryComponent,
     CategoryComponent,
     FooterComponent,
+    CountUpDirective,
   ],
   imports: [
     BrowserModule,
