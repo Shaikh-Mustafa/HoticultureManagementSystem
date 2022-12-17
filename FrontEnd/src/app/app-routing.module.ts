@@ -11,6 +11,7 @@ import { PublicComponent } from './Public/public.component';
 const routes: Routes = [
   {path:'',component:PublicComponent, children:
 [
+  {path:'',component:HomeComponent},
   {path:'home',component:HomeComponent},
   {path:'about',component:AboutComponent},
   {path:'contact-us',component:ContactUsComponent},
