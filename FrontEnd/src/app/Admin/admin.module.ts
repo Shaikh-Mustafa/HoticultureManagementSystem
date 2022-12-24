@@ -8,9 +8,7 @@ const adminRouter:Routes=[
 ]
 
 @NgModule({
-  declarations: [
-
-  
+  declarations: [  
     NavigationComponent
   ],
   imports: [
