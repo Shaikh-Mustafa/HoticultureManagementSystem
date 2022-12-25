@@ -12,6 +12,7 @@ h1{
     width: 100%;
     position: absolute;
     z-index: 0;
+    object-fit: cover;
 }
 .headingText{
     position: absolute;

@@ -15,6 +15,8 @@ import { CategoryComponent } from './Public/Components/category/category.compone
 import { PublicComponent } from './Public/public.component';
 import { FooterComponent } from './Public/Components/footer/footer.component';
 import { CountUpDirective } from './count-up.directive';
+import { LoginComponent } from './Public/Components/login/login.component';
+import { RegisterComponent } from './Public/Components/register/register.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,6 +30,8 @@ import { CountUpDirective } from './count-up.directive';
     CategoryComponent,
     FooterComponent,
     CountUpDirective,
+    LoginComponent,
+    RegisterComponent,
   ],
   imports: [
     BrowserModule,

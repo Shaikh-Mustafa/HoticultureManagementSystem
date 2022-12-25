@@ -6,6 +6,8 @@ import { CategoryComponent } from './Public/Components/category/category.compone
 import { ContactUsComponent } from './Public/Components/contact-us/contact-us.component';
 import { GalleryComponent } from './Public/Components/gallery/gallery.component';
 import { HomeComponent } from './Public/Components/home/home.component';
+import { LoginComponent } from './Public/Components/login/login.component';
+import { RegisterComponent } from './Public/Components/register/register.component';
 import { PublicComponent } from './Public/public.component';
 
 const routes: Routes = [
@@ -17,6 +19,8 @@ const routes: Routes = [
   {path:'contact-us',component:ContactUsComponent},
   {path:'gallery',component:GalleryComponent},
   {path:'category/:categoryName',component:CategoryComponent},
+  {path:'register',component:RegisterComponent},
+  {path:'login',component:LoginComponent}
 ]},
   
   {path:'admin',loadChildren:()=>import('./Admin/admin.module').then((m)=>m.AdminModule)},
