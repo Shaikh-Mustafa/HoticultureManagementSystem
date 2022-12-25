@@ -83,7 +83,7 @@
     border: none;
 }
 .register .nav-tabs .nav-link.active{
-    width: 100px;
+    width: 100%;
     color: #8d2689;
     border: 2px solid #8d2689;
     border-top-left-radius: 1.5rem;
@@ -99,7 +99,7 @@
 @media (min-width: 1200px)
 {
     .container {
-        max-width: 1400px!important;
+        max-width: 100%!important;
     }
 }
 

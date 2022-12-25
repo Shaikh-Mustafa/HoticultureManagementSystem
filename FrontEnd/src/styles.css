@@ -1438,7 +1438,7 @@ section {
 
 #footer .footer-top {
   padding: 60px 0 30px 0;
-  background: #f9faf9;
+  background: linear-gradient(90deg, #e3ffe7 0%, #d9e7ff 100%);
 }
 
 #footer .footer-top .footer-contact {
