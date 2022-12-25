@@ -4,11 +4,11 @@ p{
 }
 h1{
     font-size: 50px;
-    font-weight: 900;
+    font-weight: 700;
 }
 .main-image
 {
-    height: 400px;
+    height: 443px;
     width: 100%;
     position: absolute;
     z-index: 0;
@@ -66,7 +66,7 @@ ul li{
 }
 .container-fluid h1
 {
-    color:#3ac162;
+    color:#5fcf80;
 }
 .icon-box i {
     color: #5fcf80;

@@ -1,10 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { Routes } from '@angular/router';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-
 import { HomeComponent } from './Public/Components/home/home.component';
 import { NavigationComponent } from './Public/Components/navigation/navigation.component';
 import { AboutComponent } from './Public/Components/about/about.component';
@@ -17,6 +14,8 @@ import { FooterComponent } from './Public/Components/footer/footer.component';
 import { CountUpDirective } from './count-up.directive';
 import { LoginComponent } from './Public/Components/login/login.component';
 import { RegisterComponent } from './Public/Components/register/register.component';
+import Swiper from 'swiper';
+import { ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,7 +34,8 @@ import { RegisterComponent } from './Public/Components/register/register.compone
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
