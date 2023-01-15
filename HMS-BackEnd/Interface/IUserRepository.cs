@@ -5,9 +5,9 @@ namespace HMS_BackEnd.Interface
 {
     public interface IUserRepository
     {
-        Task<IEnumerable<User>> getUsers();
-        Task<UserDTO> getUserById(int id);
-        Task<UserDTO> addUser(UserDTO userDTO);
-        Task<UserDTO> deleteUser(int id); 
+
+        Task<User> Authenticate(string userName, string password);
+        Task<List<User>> GetAllUsers();
+        Task<User> CreateUser(User user);
     }
 }

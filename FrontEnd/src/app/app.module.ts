@@ -15,7 +15,8 @@ import { CountUpDirective } from './count-up.directive';
 import { LoginComponent } from './Public/Components/login/login.component';
 import { RegisterComponent } from './Public/Components/register/register.component';
 import Swiper from 'swiper';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,6 +37,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

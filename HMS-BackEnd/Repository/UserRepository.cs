@@ -2,38 +2,33 @@
 using HMS_BackEnd.DTO;
 using HMS_BackEnd.Interface;
 using HMS_BackEnd.Models;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace HMS_BackEnd.Repository
 {
     public class UserRepository : IUserRepository
     {
-        private readonly DataContext dc;
+        private readonly DataContext datacontext;
 
-        public UserRepository(DataContext dc)
+        public UserRepository(DataContext datacontext)
         {
-            this.dc = dc;
+            this.datacontext = datacontext;
+        }
+        public async Task<User> Authenticate(string userName, string password)
+        {
+            return await datacontext.Users.FirstOrDefaultAsync(x => x.userName == userName && x.password == password);
         }
 
-
-        public async Task<UserDTO> addUser(UserDTO userDTO)
+        public async Task<User> CreateUser(User user)
         {
-            throw new NotImplementedException();
+            await this.datacontext.AddAsync(user);
+            return user;
         }
 
-        public Task<UserDTO> deleteUser(int id)
+        public Task<List<User>> GetAllUsers()
         {
-            throw new NotImplementedException();
-        }
-
-        public Task<UserDTO> getUserById(int id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public async Task<IEnumerable<User>> getUsers()
-        {
-            return await dc.Users.ToListAsync();
+            return datacontext.Users.ToListAsync();
         }
     }
 }

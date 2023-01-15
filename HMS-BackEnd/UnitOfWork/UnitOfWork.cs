@@ -13,5 +13,12 @@ namespace HMS_BackEnd.UnitOfWork
         }
 
         public IUserRepository UserRepository => new UserRepository(dc);
+
+
+
+        public async Task<bool> SaveAsync()
+        {
+            return await dc.SaveChangesAsync() > 0;
+        }
     }
 }
