@@ -1,0 +1,21 @@
+
+
+<div
+class="card ms-0 ms-lg-2 ms-md-5 b-none productCard pointer"
+[routerLink]="'/product-details/' + productName"   
+data-aos="zoom-in" data-aos-duration='1500'
+>
+<img [src]="productImage" class="card-img-top tile-image" alt="..." />
+<div class="card-body">
+  <h5 class="card-title productName">{{ productName }}</h5>
+  <div class="d-flex">
+    <p class="card-text productPrice">&#8377;{{ productPrice }}</p>
+    <p class="card-text productMRP">
+      <del>&#8377;{{ productPrice }}</del>
+    </p>
+    <div class="text-end col-3">
+      <i class="bi bi-cart2 cart-icon"></i>
+    </div>
+  </div>
+</div>
+</div>

@@ -1,0 +1,13 @@
+img
+{
+    width: 100%;
+}
+.imageActive{
+    border-bottom: solid 3px #79AB71;
+    padding-bottom : 5px;
+}
+.ngxImageZoomContainer
+{
+    height: auto;
+    width: auto;
+}

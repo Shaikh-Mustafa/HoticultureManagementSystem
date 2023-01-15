@@ -1,0 +1,53 @@
+<div class="border p-2 b-none mt-3">
+    <div>
+      <h4 class="my-3 border-bottom my-lg-4 my-md-4 mx-lg-4 mx-md-4 main-tile-heading">Deals Of The Day</h4>
+    </div>
+<div class="row m-0 p-0">
+    <div class="col-6 col-md-3 col-lg-3" *ngFor="let item of DealOfTheDay">
+      <app-home-product-tile
+      [productImage]="item.productImage"
+      [productName]="item.productName"
+      [productPrice]="item.productPrice"
+      ></app-home-product-tile>
+    </div>
+  </div>
+</div>
+
+<!-- Trending Products... -->
+<div class="p-2 b-none trendingProducts">
+  <div>
+    <h4 class="my-3 border-bottom main-tile-heading" data-aos="fade-right" data-aos-duration='1500'>Trending Products</h4>
+  </div>
+  <div class="row m-0 p-0">
+    <div class="col-6 col-md-3 col-lg-3" *ngFor="let item of TrendingProducts">
+      <app-home-product-tile
+      [productImage]="item.productImage"
+      [productName]="item.productName"
+      [productPrice]="item.productPrice"      
+      ></app-home-product-tile>
+    </div>
+  </div>
+</div>
+
+<!-- Pagination -->
+<div class="row m-0" style="justify-content: center;" data-aos="zoom-in" data-aos-duration="1500">
+  <div class="col-12 col-lg-4 col-md-4">
+    <nav aria-label="Page navigation example">
+      <ul class="pagination pagination-center">
+        <li><a class="page-link">
+          <div class="paginationButtons me-4 me-lg-5 me-md-5">
+            <i class="bi bi-caret-left-fill arrow"></i>
+          </div>
+        </a></li>
+          <li class="page-item mt-4 pt-2"><a class="page-link">1</a></li>
+          <li class="page-item mt-4 pt-2"><a class="page-link">2</a></li>
+          <li class="page-item mt-4 pt-2 me-5"><a class="page-link">3</a></li>
+        <li class="page-item"><a class="page-link">
+          <div class="paginationButtons">
+            <i class="bi bi-caret-right-fill arrow"></i>
+          </div>
+        </a></li>
+      </ul>
+    </nav>
+  </div>
+</div>

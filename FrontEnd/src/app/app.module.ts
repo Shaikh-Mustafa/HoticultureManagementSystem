@@ -14,9 +14,14 @@ import { FooterComponent } from './Public/Components/footer/footer.component';
 import { CountUpDirective } from './count-up.directive';
 import { LoginComponent } from './Public/Components/login/login.component';
 import { RegisterComponent } from './Public/Components/register/register.component';
-import Swiper from 'swiper';
+import { NgxImageZoomModule } from 'ngx-image-zoom';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { HomeProductCategoriesComponent } from './Public/Components/home/home-product-categories/home-product-categories.component';
+import { HomeProductTileComponent } from './Public/Components/home/home-product-tile/home-product-tile.component';
+import { ProductDetailImageComponent } from './Public/Components/Product-Detail/product-detail-image/product-detail-image.component';
+import { ProductDetailsTileComponent } from './Public/Components/Product-Detail/product-details-tile/product-details-tile.component';
+import { ProductDetailsMainPageComponent } from './Public/Components/Product-Detail/product-details-main-page/product-details-main-page.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,13 +37,19 @@ import { HttpClientModule } from '@angular/common/http';
     CountUpDirective,
     LoginComponent,
     RegisterComponent,
+    HomeProductCategoriesComponent,
+    HomeProductTileComponent,
+    ProductDetailImageComponent,
+    ProductDetailsTileComponent,
+    ProductDetailsMainPageComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxImageZoomModule
   ],
   providers: [],
   bootstrap: [AppComponent]
