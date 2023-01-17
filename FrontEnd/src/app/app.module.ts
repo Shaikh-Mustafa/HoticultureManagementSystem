@@ -22,6 +22,7 @@ import { HomeProductTileComponent } from './Public/Components/home/home-product-
 import { ProductDetailImageComponent } from './Public/Components/Product-Detail/product-detail-image/product-detail-image.component';
 import { ProductDetailsTileComponent } from './Public/Components/Product-Detail/product-details-tile/product-details-tile.component';
 import { ProductDetailsMainPageComponent } from './Public/Components/Product-Detail/product-details-main-page/product-details-main-page.component';
+import { AdminModule } from './Admin/admin.module';
 @NgModule({
   declarations: [
     AppComponent,
@@ -49,7 +50,8 @@ import { ProductDetailsMainPageComponent } from './Public/Components/Product-Det
     ReactiveFormsModule,
     FormsModule,
     HttpClientModule,
-    NgxImageZoomModule
+    NgxImageZoomModule,
+    AdminModule
   ],
   providers: [],
   bootstrap: [AppComponent]

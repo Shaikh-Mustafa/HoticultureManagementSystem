@@ -10,16 +10,18 @@ import { CustomersComponent } from './admin/Components/customers/customers.compo
 import { ComplaintsComponent } from './admin/Components/complaints/complaints.component';
 import { FAQComponent } from './admin/Components/faq/faq.component';
 import { SettingsComponent } from './admin/Components/settings/settings.component';
-const adminRouter:Routes=[
-  {path:'',component:AdminComponent}
+import { DataTablesModule } from 'angular-datatables';
+const adminRouter: Routes = [
+  { path: '', component: AdminComponent }
 ]
 
 @NgModule({
-  declarations: [  
+  declarations: [
     NavigationComponent, DashboardComponent, ProductsComponent, SalesComponent, CustomersComponent, ComplaintsComponent, FAQComponent, SettingsComponent
   ],
   imports: [
     CommonModule,
+    DataTablesModule,
     RouterModule.forChild(adminRouter)
   ]
 })
