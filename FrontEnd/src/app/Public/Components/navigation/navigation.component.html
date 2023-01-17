@@ -33,10 +33,8 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
    <div class="CartContainer">
-   <div class="row my-3">
-  <h4 class="text-center yourCart">Your Cart ({{CartItem.length}})</h4>
-</div>
-<div class="mb-5 p-0 border border-dark ">
+  
+<div class="mb-5 p-0">
   <div class="col-12" *ngFor="let item of CartItem">
     <app-cart-product-tile [productImage]="item.productImage" [productName]="item.productName"
       [productPrice]="item.productPrice" [productQuantity]="item.productQuantity"></app-cart-product-tile>
