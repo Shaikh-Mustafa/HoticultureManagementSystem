@@ -14,6 +14,11 @@
             </ul>
           </li>
           <li><a routerLink="contact-us" routerLinkActive="ActiveLink">Contact</a></li>
+
+          <li>
+            <i class="bi bi-cart shopping-cart" data-bs-toggle="modal" data-bs-target="#exampleModal"></i>
+          </li>
+
           <li *ngIf="!isUserLoggedIn">
             <a routerLink="register" class="get-started-btn">Register</a>
            <a routerLink="login" class="login-btn">Login</a>
@@ -29,6 +34,7 @@
           <p>{{userName}}</p>
           
       </li>
+
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
@@ -36,3 +42,41 @@
      
     </div>
   </header><!-- End Header -->
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Shopping Cart</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+   <div class="CartContainer">
+  
+<div class="mb-5 p-0">
+  <div class="col-12" *ngFor="let item of CartItem">
+    <app-cart-product-tile [productImage]="item.productImage" [productName]="item.productName"
+      [productPrice]="item.productPrice" [productQuantity]="item.productQuantity"></app-cart-product-tile>
+  </div>
+  <hr>
+  <div class="col-12 m-2 row">
+    <div class="col-6 text-start col-lg-6">
+      <p class="fw-bold sub-total">SUBTOTAL</p>
+    </div>
+    <div class="col-6 text-center col-lg-6">
+      <p class="fw-semibold Price">&#8377;18</p>
+    </div>
+
+  </div>
+  <div class="col-12 p-2">
+    <button class="btn checkout-btn fw-semibold w-100" routerLink="/checkout">Checkout</button>
+    <div class="text-center mt-4">
+      <a class="C-S" routerLink="/home">CONTINUE SHOPPING</a>
+    </div>
+  </div>
+</div>
+
+</div>
+
+    </div>
+  </div>
+</div>

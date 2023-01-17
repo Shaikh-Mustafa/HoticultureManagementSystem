@@ -23,6 +23,7 @@ import { ProductDetailImageComponent } from './Public/Components/Product-Detail/
 import { ProductDetailsTileComponent } from './Public/Components/Product-Detail/product-details-tile/product-details-tile.component';
 import { ProductDetailsMainPageComponent } from './Public/Components/Product-Detail/product-details-main-page/product-details-main-page.component';
 import { AdminModule } from './Admin/admin.module';
+import { CartProductTileComponent } from './Public/Components/Cart/cart-product-tile/cart-product-tile.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,6 +44,7 @@ import { AdminModule } from './Admin/admin.module';
     ProductDetailImageComponent,
     ProductDetailsTileComponent,
     ProductDetailsMainPageComponent,
+    CartProductTileComponent,
   ],
   imports: [
     BrowserModule,
