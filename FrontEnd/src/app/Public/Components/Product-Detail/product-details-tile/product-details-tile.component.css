@@ -1,0 +1,55 @@
+*
+{
+    font-family: 'Mulish', sans-serif;
+}
+h2,h5{
+font-weight: 700;
+}
+.product-brief{
+    padding-top:24px ;
+    padding-bottom: 20px;
+}
+p{
+    font-size: 18px;
+    margin: 0px;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+.price{
+    font-size: 25px;
+}
+.icon-style{
+    font: icon;
+    /* color: #54C63A; */
+    padding-top: 2px;
+}
+.icon-style-inStock
+{
+    color: #54C63A;
+}
+.icon-style-outOfStock{
+    color: red;
+}
+.product-status{
+    display: flex;
+    padding-top: 20px;
+}
+.add-to-card{
+    height: 57px;
+    border-radius: 0;
+    margin:8px 0px;
+    padding: 8px 0px;
+    font-size: 20px;
+    font-weight: 600;
+}
+@media screen and (max-width:600px){
+.price 
+{
+    font-size: 20px;
+}   
+p{
+    font-size: 15px;
+}
+}

@@ -1,0 +1,26 @@
+<div class="row">
+    <div class="product-brief border-bottom">
+       <h2>
+        {{productName}}
+       </h2>
+       <p class="price">${{productprice}}</p>
+    </div>
+    <div class="product-detail">
+        <div class="product-status">
+            <i class="bi bi-circle-fill icon-style" [ngClass]="inStock ?'icon-style-inStock':'icon-style-outOfStock'"></i>
+            <h5 class="ps-3">{{status}}</h5>
+        </div>
+        <div class="payment-details my-3">
+            <p>{{payment}}</p>
+            <a href="#">Learn More</a>
+            <div>
+                <button class="btn btn-dark col-12 add-to-card" type="submit">
+                    Add To Card
+                </button>
+            </div>
+        </div>
+
+        <p class="p-3">{{productDiscription.split('----')[0]}}</p>
+        <p class="p-3">{{productDiscription.split('----')[1]}}</p>
+    </div>
+</div>

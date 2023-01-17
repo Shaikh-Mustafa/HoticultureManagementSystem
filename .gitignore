@@ -5,3 +5,6 @@
 *.csproj
 HMS-BackEnd/.vs/HMS-BackEnd/v17/.suo
 *.dll
+*.csproj
+*.dll
+*.sentinel

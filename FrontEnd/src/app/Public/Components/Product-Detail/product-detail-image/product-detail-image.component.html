@@ -1,0 +1,25 @@
+<lib-ngx-image-zoom
+  [thumbImage]="images[0]"
+  [fullImage]="images[0]"
+  [lensWidth]="100"
+  [lensHeight]="100"
+  [magnification]="2"
+  [enableScrollZoom]="true"
+  [enableLens]="true"
+  #MainImage
+></lib-ngx-image-zoom>
+
+<div class="row">
+  <div class="col-3" *ngFor="let image of images">
+    <img
+      [src]="image"
+      class="productDetailsMiniImages"
+      [ngClass]="MainImage.fullImage == SmallImage.src ? 'imageActive' : ''"
+      (click)="
+        MainImage.fullImage = SmallImage.src;
+        MainImage.thumbImage = SmallImage.src
+      "
+      #SmallImage
+    />
+  </div>
+</div>
