@@ -3,7 +3,19 @@
   background: linear-gradient(90deg, #e3ffe7 0%, #d9e7ff 100%);
   padding: 3px 70px!important;
 }
-
+.shopping-cart
+{
+  font-size: 25px;
+  margin-left: 20px;
+}
+.modal-dialog
+{
+	margin-left: 350px;
+}
+.modal-content
+{
+	width: 800px;
+}
 .login-btn {
     margin-left: 22px;
     background: #8d2689;
@@ -64,3 +76,59 @@
  .ActiveLink{
   color : #8d2689!important;
  }
+ @media only screen and (max-width: 600px) {
+
+  .sub-total{
+    margin: 0 !important;
+    font-size: 22px!important;
+    margin-top: 1px!important;
+  }
+  
+  .Price{
+    font-size: 25px!important;
+  }
+  
+  .checkout-btn{
+    font-size: 25px!important;
+  }
+  
+  }
+  
+  .sub-total{
+    margin-left: 8rem;
+    font-size: 28px;
+  }
+  
+  .Price{
+    font-size: 28px;
+  }
+  
+  .checkout-btn{
+    color: white;
+    background-color: black;
+    border: none;
+    border-radius: 0;
+    padding: 5px;
+    height: 60px;
+    font-size: 28px;
+    font-family: 'Mulish', sans-serif;
+  
+  }
+  
+  .C-S{
+    font-size: 18px;
+    margin-top: 18px;
+    text-decoration: underline;
+    color: #6c757d;
+    cursor: pointer;
+    font-family: 'Mulish', sans-serif;
+    word-spacing: 7px;
+  
+  }
+  
+  
+  .yourCart{
+    font-family: 'Mulish', sans-serif;
+    font-weight: 700;
+    font-size: 30px;
+  }
