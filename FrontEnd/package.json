@@ -22,6 +22,7 @@
     "aos": "^2.3.4",
     "bootstrap": "^5.2.2",
     "bootstrap-icons": "^1.10.2",
+    "chart.js": "^4.1.2",
     "ngx-image-zoom": "^1.0.1",
     "rxjs": "~7.4.0",
     "swiper": "^8.4.5",
