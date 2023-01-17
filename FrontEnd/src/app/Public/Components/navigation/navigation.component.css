@@ -64,3 +64,9 @@
  .ActiveLink{
   color : #8d2689!important;
  }
+
+ .userProfileIcon{
+  width: 40px;
+  border-radius: 50%;
+  margin-left: 10%;
+ }

@@ -15,7 +15,8 @@ export class LoginComponent implements OnInit {
 
   constructor(private publicService: PublicServicesService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {   
+  }
 
   Login() {
     if (this.loginForm.valid) {
@@ -26,7 +27,8 @@ export class LoginComponent implements OnInit {
         // setting isLoggedin == true;
         this.publicService.isLoggedin = true;
         // setting the token to the localStorage 
-        this.publicService.setTokenAfterLogin(res.token);
+        this.publicService.setDataAfterLogin(res.token, res.userName);
+
 
 
         window.alert(res);

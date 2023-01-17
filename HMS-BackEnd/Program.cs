@@ -19,29 +19,18 @@ builder.Services.AddDbContext<DataContext>(options => options.UseSqlServer(build
 
 
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
 
 // Unit of Work Configuration...
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
-
 builder.Services.AddAutoMapper(typeof(AutoMapperProfiles).Assembly);
 
-var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("This is My Secret Key"));
 
-builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(
-    opt =>
-    {
-        opt.TokenValidationParameters = new TokenValidationParameters
-        {
-            ValidateIssuerSigningKey = true,
-            ValidateIssuer = false,  // set to true after deploy on production
-            ValidateAudience = false,  // set to true after deploy on production
-            IssuerSigningKey = key
-        };
-    });
 
+
+
+// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+builder.Services.AddEndpointsApiExplorer();
+//builder.Services.AddSwaggerGen();
 builder.Services.AddSwaggerGen(e =>
 {
     e.SwaggerDoc("v1", new OpenApiInfo { Title = "HMS API's", Version = "v1" });
@@ -70,7 +59,25 @@ builder.Services.AddSwaggerGen(e =>
                 });
 });
 
-builder.Services.AddAuthorization();
+
+
+var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("This is My Secret Key"));
+
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(
+    opt =>
+    {
+        opt.TokenValidationParameters = new TokenValidationParameters
+        {
+            ValidateIssuerSigningKey = true,
+            ValidateIssuer = false,  // set to true after deploy on production
+            ValidateAudience = false,  // set to true after deploy on production
+            IssuerSigningKey = key
+        };
+    });
+
+
+
+//builder.Services.AddAuthorization();
 
 
 var app = builder.Build();
@@ -92,6 +99,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseAuthentication();
 
 app.UseAuthorization();
 

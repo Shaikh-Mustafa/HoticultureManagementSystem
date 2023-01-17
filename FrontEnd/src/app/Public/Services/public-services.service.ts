@@ -30,8 +30,10 @@ userLogin(user : loginReq):Observable<any>{
   )
 }
 
-setTokenAfterLogin(token : string){
+setDataAfterLogin(token : string, username : string){
     localStorage.setItem("token",token);
+    localStorage.setItem('username',username);
+    localStorage.setItem('isLoggedIn','true');
 }
 
 

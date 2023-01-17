@@ -14,10 +14,25 @@
             </ul>
           </li>
           <li><a routerLink="contact-us" routerLinkActive="ActiveLink">Contact</a></li>
+          <li *ngIf="!isUserLoggedIn">
+            <a routerLink="register" class="get-started-btn">Register</a>
+           <a routerLink="login" class="login-btn">Login</a>
+         </li>
+   
+         <li *ngIf="isUserLoggedIn">
+             <img src="../../../../assets/Images/user-profile-icon.png" class="userProfileIcon">
+             
+             
+         </li>
+         
+         <li *ngIf="isUserLoggedIn">
+          <p>{{userName}}</p>
+          
+      </li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
-      <a routerLink="register" class="get-started-btn">Register</a>
-      <a routerLink="login" class="login-btn">Login</a>
+     
+     
     </div>
   </header><!-- End Header -->

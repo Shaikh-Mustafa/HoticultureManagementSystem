@@ -9,6 +9,7 @@ namespace HMS_BackEnd.Helper
         public AutoMapperProfiles()
         {
             CreateMap<User,UserDTO>().ReverseMap();
+            CreateMap<Product,ProductDTO>().ReverseMap();
         }
     }
 }

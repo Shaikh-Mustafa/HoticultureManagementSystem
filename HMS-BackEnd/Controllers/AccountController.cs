@@ -1,6 +1,7 @@
 ﻿using HMS_BackEnd.DTO;
 using HMS_BackEnd.Models;
 using HMS_BackEnd.UnitOfWork;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
@@ -18,6 +19,7 @@ namespace HMS_BackEnd.Controllers
             this.uow = uow;
         }
 
+        [AllowAnonymous]
         [HttpPost("login")]
         public async Task<IActionResult> Login(LoginReqDTO loginReq)
         {

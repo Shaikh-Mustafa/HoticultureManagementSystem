@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PublicServicesService } from '../../Services/public-services.service';
 
 @Component({
   selector: 'app-navigation',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavigationComponent implements OnInit {
 
-  constructor() { }
+  isUserLoggedIn : boolean = false;
+  userName : string = '';
+
+  constructor(private publicService : PublicServicesService) { }
 
   ngOnInit(): void {
+    this.isUserLoggedIn = localStorage.getItem('isLoggedIn') == 'true'? true:false;
+    this.userName = localStorage.getItem('username')!;    
   }
+
+  
 
 }

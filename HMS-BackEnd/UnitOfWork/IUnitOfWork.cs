@@ -6,6 +6,9 @@ namespace HMS_BackEnd.UnitOfWork
     {
         IUserRepository UserRepository { get; }
 
+        IProductRepository ProductRepository { get; }
+        IStockRepository StockRepository { get; }
+
         Task<bool> SaveAsync();
     }
 }
