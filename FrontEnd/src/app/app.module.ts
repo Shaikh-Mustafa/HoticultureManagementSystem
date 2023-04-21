@@ -24,6 +24,29 @@ import { ProductDetailsTileComponent } from './Public/Components/Product-Detail/
 import { ProductDetailsMainPageComponent } from './Public/Components/Product-Detail/product-details-main-page/product-details-main-page.component';
 import { AdminModule } from './Admin/admin.module';
 import { CartProductTileComponent } from './Public/Components/Cart/cart-product-tile/cart-product-tile.component';
+import { RouterModule, Routes } from '@angular/router';
+import { AddProductComponent } from './Admin/admin/Components/add-product/add-product.component';
+import { AddStockComponent } from './Admin/admin/Components/add-stock/add-stock.component';
+
+const routes: Routes = [
+  {path:'',component:PublicComponent, children:
+[
+  {path:'',component:HomeComponent},
+  {path:'home',component:HomeComponent},
+  {path:'about',component:AboutComponent},
+  {path:'contact-us',component:ContactUsComponent},
+  {path:'gallery',component:GalleryComponent},
+  {path:'category/:categoryName',component:CategoryComponent},
+  {path:'register',component:RegisterComponent},
+  {path:'login',component:LoginComponent},
+  {path:'product-details/:productName',component:ProductDetailsMainPageComponent},
+
+]},
+  
+  {path:'admin',loadChildren:()=>import('./Admin/admin.module').then((m)=>m.AdminModule)}
+
+];
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -45,10 +68,11 @@ import { CartProductTileComponent } from './Public/Components/Cart/cart-product-
     ProductDetailsTileComponent,
     ProductDetailsMainPageComponent,
     CartProductTileComponent,
+ 
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
+    RouterModule.forRoot(routes),
     ReactiveFormsModule,
     FormsModule,
     HttpClientModule,

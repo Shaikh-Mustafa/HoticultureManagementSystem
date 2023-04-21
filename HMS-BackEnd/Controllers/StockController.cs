@@ -31,7 +31,7 @@ namespace HMS_BackEnd.Controllers
             return Ok(stock);
         }
 
-        [HttpPost("addProduct")]
+        [HttpPost("addStock")]
         public async Task<IActionResult> addProduct(StockDTO stockdto)
         {
             try

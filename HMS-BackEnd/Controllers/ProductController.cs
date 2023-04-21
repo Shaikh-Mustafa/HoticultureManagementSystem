@@ -16,7 +16,7 @@ namespace HMS_BackEnd.Controllers
 
         
         [HttpGet("getAllProducts")]
-        public async Task<IActionResult> getAllProducts()
+        public async Task<ActionResult> getAllProducts()
         {
             var products = this.uow.ProductRepository.getAllProducts();
 
@@ -24,7 +24,7 @@ namespace HMS_BackEnd.Controllers
         }
 
         [HttpGet("GetProductById/id")]
-        public async Task<IActionResult> getProductById(int id)
+        public async Task<ActionResult> getProductById(int id)
         {
             var product = this.uow.ProductRepository.getProductById(id);
 
@@ -32,7 +32,7 @@ namespace HMS_BackEnd.Controllers
         }
 
         [HttpPost("addProduct")]
-        public async Task<IActionResult> addProduct(ProductDTO productdto)
+        public async Task<ActionResult> addProduct(ProductDTO productdto)
         {
             try
             {
@@ -48,7 +48,7 @@ namespace HMS_BackEnd.Controllers
         }
 
         [HttpDelete("delete/id")]
-        public async Task<IActionResult> deleteProduct(int id)
+        public async Task<ActionResult> deleteProduct(int id)
         {
             var product = this.uow.ProductRepository.deleteProduct(id);
 

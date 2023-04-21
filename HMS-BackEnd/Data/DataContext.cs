@@ -12,5 +12,9 @@ namespace HMS_BackEnd.Data
         public DbSet<Product> Products { get; set; }
 
         public DbSet<Stock> Stocks { get; set; }
+
+        public DbSet<FarmOwner> FarmOwners { get; set; }
+
+        public DbSet<buyer> buyers { get; set; }
     }
 }

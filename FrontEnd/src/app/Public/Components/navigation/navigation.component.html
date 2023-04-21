@@ -1,82 +1,133 @@
 <header id="header">
-    <div class="cust-nav d-flex align-items-center fixed-top">
-      <h1 class="logo me-auto"><a routerLink="home">HMS</a></h1>
-      <nav id="navbar" class="navbar order-last order-lg-0">
-        <ul>
-          <li><a routerLink="home" routerLinkActive="ActiveLink">Home</a></li>
-          <li><a routerLink="about" routerLinkActive="ActiveLink">About</a></li>
-          <li class="dropdown"><a><span>Category</span> <i class="bi bi-chevron-down"></i></a>
-            <ul>
-              <li><a routerLink="category/dropdown1" routerLinkActive="ActiveLink">Drop Down 1</a></li>
-              <li><a routerLink="category/dropdown2" routerLinkActive="ActiveLink">Drop Down 2</a></li>
-              <li><a routerLink="category/dropdown3" routerLinkActive="ActiveLink">Drop Down 3</a></li>
-              <li><a routerLink="category/dropdown4" routerLinkActive="ActiveLink">Drop Down 4</a></li>
-            </ul>
-          </li>
-          <li><a routerLink="contact-us" routerLinkActive="ActiveLink">Contact</a></li>
+  <div class="cust-nav d-flex align-items-center fixed-top">
+    <h1 class="logo me-auto"><a routerLink="home">HMS</a></h1>
+    <nav id="navbar" class="navbar order-last order-lg-0">
+      <ul>
+        <li><a routerLink="home" routerLinkActive="ActiveLink">Home</a></li>
+        <li><a routerLink="about" routerLinkActive="ActiveLink">About</a></li>
+        <li class="dropdown">
+          <a><span>Category</span> <i class="bi bi-chevron-down"></i></a>
+          <ul>
+            <li>
+              <a routerLink="category/Floriculture" routerLinkActive="ActiveLink"
+                >Floriculture</a
+              >
+            </li>
+            <li>
+              <a routerLink="category/Olericulture" routerLinkActive="ActiveLink"
+                >Olericulture</a
+              >
+            </li>
+            <li>
+              <a routerLink="category/Pomology" routerLinkActive="ActiveLink"
+                >Pomology</a
+              >
+            </li>
+            <li>
+              <a routerLink="category/Landscape" routerLinkActive="ActiveLink"
+                >Landscape</a
+              >
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a routerLink="contact-us" routerLinkActive="ActiveLink">Contact</a>
+        </li>
 
-          <li>
-            <i class="bi bi-cart shopping-cart" data-bs-toggle="modal" data-bs-target="#exampleModal"></i>
-          </li>
+        <li
+          *ngIf="isUserLoggedIn"
+          style="margin-left: 18px; margin-right: 23px"
+        >
+          <i
+            class="bi bi-cart shopping-cart"
+            data-bs-toggle="modal"
+            data-bs-target="#exampleModal"
+          ></i>
+        </li>
 
-          <li *ngIf="!isUserLoggedIn">
-            <a routerLink="register" class="get-started-btn">Register</a>
-           <a routerLink="login" class="login-btn">Login</a>
-         </li>
-   
-         <li *ngIf="isUserLoggedIn">
-             <img src="../../../../assets/Images/user-profile-icon.png" class="userProfileIcon">
-             
-             
-         </li>
-         
-         <li *ngIf="isUserLoggedIn">
-          <p>{{userName}}</p>
-          
-      </li>
+        <li *ngIf="!isUserLoggedIn">
+          <a routerLink="register" class="get-started-btn">Register</a>
+        </li>
 
-        </ul>
-        <i class="bi bi-list mobile-nav-toggle"></i>
-      </nav><!-- .navbar -->
-     
-     
-    </div>
-  </header><!-- End Header -->
+        <li *ngIf="!isUserLoggedIn">
+          <a routerLink="login" class="login-btn">Login</a>
+        </li>
+
+        <li
+          *ngIf="isUserLoggedIn"
+          style="margin-left: 10px; margin-right: 15px"
+        >
+          <img
+            src="../../../../assets/Images/user-profile-icon.png"
+            class="userProfileIcon"
+          />
+        </li>
+
+        <li *ngIf="isUserLoggedIn" style="margin-top: 14px">
+          <p>{{ userName }}</p>
+        </li>
+
+        <li *ngIf="isUserLoggedIn" style="margin-top: 2px; margin-left: 15px">
+          <i class="bi bi-box-arrow-right" style="font-size: 25px" (click)="Logout()"></i>
+        </li>
+      </ul>
+      <i class="bi bi-list mobile-nav-toggle"></i>
+    </nav>
+    <!-- .navbar -->
+  </div>
+</header>
+<!-- End Header -->
 <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div
+  class="modal fade"
+  id="exampleModal"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
         <h1 class="modal-title fs-5" id="exampleModalLabel">Shopping Cart</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
       </div>
-   <div class="CartContainer">
-  
-<div class="mb-5 p-0">
-  <div class="col-12" *ngFor="let item of CartItem">
-    <app-cart-product-tile [productImage]="item.productImage" [productName]="item.productName"
-      [productPrice]="item.productPrice" [productQuantity]="item.productQuantity"></app-cart-product-tile>
-  </div>
-  <hr>
-  <div class="col-12 m-2 row">
-    <div class="col-6 text-start col-lg-6">
-      <p class="fw-bold sub-total">SUBTOTAL</p>
-    </div>
-    <div class="col-6 text-center col-lg-6">
-      <p class="fw-semibold Price">&#8377;18</p>
-    </div>
-
-  </div>
-  <div class="col-12 p-2">
-    <button class="btn checkout-btn fw-semibold w-100" routerLink="/checkout">Checkout</button>
-    <div class="text-center mt-4">
-      <a class="C-S" routerLink="/home">CONTINUE SHOPPING</a>
-    </div>
-  </div>
-</div>
-
-</div>
-
+      <div class="CartContainer">
+        <div class="mb-5 p-0">
+          <div class="col-12" *ngFor="let item of CartItem">
+            <app-cart-product-tile
+              [productImage]="item.productImage"
+              [productName]="item.productName"
+              [productPrice]="item.productPrice"
+              [productQuantity]="item.productQuantity"
+            ></app-cart-product-tile>
+          </div>
+          <hr />
+          <div class="col-12 m-2 row">
+            <div class="col-6 text-start col-lg-6">
+              <p class="fw-bold sub-total">SUBTOTAL</p>
+            </div>
+            <div class="col-6 text-center col-lg-6">
+              <p class="fw-semibold Price">&#8377;18</p>
+            </div>
+          </div>
+          <div class="col-12 p-2">
+            <button
+              class="btn checkout-btn fw-semibold w-100"
+              routerLink="/checkout"
+            >
+              Checkout
+            </button>
+            <div class="text-center mt-4">
+              <a class="C-S" routerLink="/home">CONTINUE SHOPPING</a>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>

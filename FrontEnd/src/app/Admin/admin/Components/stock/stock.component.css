@@ -1,0 +1,13 @@
+.dt_ProductImage {
+    width: 150px !important;
+  }
+  
+  .dt_AvailableImages {
+    width: 25px;
+  }
+  
+  .AddProduct {
+    margin-right: 50px !important;
+    margin-left: auto;
+  }
+  

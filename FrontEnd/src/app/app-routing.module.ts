@@ -11,29 +11,11 @@ import { ProductDetailsMainPageComponent } from './Public/Components/Product-Det
 import { RegisterComponent } from './Public/Components/register/register.component';
 import { PublicComponent } from './Public/public.component';
 
-const routes: Routes = [
-  {path:'',component:PublicComponent, children:
-[
-  {path:'',component:HomeComponent},
-  {path:'home',component:HomeComponent},
-  {path:'about',component:AboutComponent},
-  {path:'contact-us',component:ContactUsComponent},
-  {path:'gallery',component:GalleryComponent},
-  {path:'category/:categoryName',component:CategoryComponent},
-  {path:'register',component:RegisterComponent},
-  {path:'login',component:LoginComponent},
-  {path:'product-details/:productName',component:ProductDetailsMainPageComponent},
 
-]},
-  
-  {path:'admin',loadChildren:()=>import('./Admin/admin.module').then((m)=>m.AdminModule)}
-
-];
 
 @NgModule({
-  imports: [
-    RouterModule.forRoot(routes),
-    AdminModule,
+  imports: [    
+    
   ],
   exports: [RouterModule]
 })

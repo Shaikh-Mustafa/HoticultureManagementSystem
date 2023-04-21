@@ -19,6 +19,7 @@ export class NavigationComponent implements OnInit {
 
   ngOnInit(): void {
     this.isUserLoggedIn = localStorage.getItem('isLoggedIn') == 'true'? true:false;
+    
     this.userName = localStorage.getItem('username')!;    
  
 
@@ -38,6 +39,13 @@ export class NavigationComponent implements OnInit {
     ]
   }
 
-  
+
+  Logout(){
+    this.publicService.Logout();
+  }
+
+  ngDoCheck(){
+    this.isUserLoggedIn = localStorage.getItem("isLoggedIn") =="true" ?true:false;
+  }
 
 }

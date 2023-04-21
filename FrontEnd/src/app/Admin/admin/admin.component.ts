@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PublicServicesService } from 'src/app/Public/Services/public-services.service';
 
 @Component({
   selector: 'app-admin',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminComponent implements OnInit {
 
-  constructor() { }
+  constructor(private publicService : PublicServicesService) { }
+
+  userName : any = '';
+  userType : any = '';
 
   ngOnInit(): void {
+    this.userName = localStorage.getItem('username');
+    this.userType = localStorage.getItem('userType');
   }
 
+  Logout(){
+    this.publicService.Logout();
+  }
 }

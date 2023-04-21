@@ -22,7 +22,7 @@ namespace HMS_BackEnd.Repository
 
         public async Task<User> CreateUser(User user)
         {
-            await this.datacontext.AddAsync(user);
+            await datacontext.AddAsync(user);
             return user;
         }
 

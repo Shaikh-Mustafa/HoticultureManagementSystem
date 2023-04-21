@@ -22,6 +22,9 @@ namespace HMS_BackEnd.UnitOfWork
 
         public IStockRepository StockRepository => new StockRepository(dc, mapper);
 
+        public IFarmOwnerRepository FarmOwnerRepository => new FarmOwnerRepository(dc,mapper);
+
+        public IBuyerRepository BuyerRepository => new BuyerRepository(dc,mapper);
 
 
         public async Task<bool> SaveAsync()

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { AlertifyService } from 'src/Shared/Services/alertify.service';
 import { PublicServicesService } from '../../Services/public-services.service';
 
 @Component({
@@ -13,7 +15,11 @@ export class LoginComponent implements OnInit {
     password: new FormControl('', [Validators.required]),
   });
 
-  constructor(private publicService: PublicServicesService) {}
+  constructor(
+    private publicService: PublicServicesService,
+    private alertify : AlertifyService,
+    private router : Router    
+    ) {}
 
   ngOnInit(): void {   
   }
@@ -27,17 +33,25 @@ export class LoginComponent implements OnInit {
         // setting isLoggedin == true;
         this.publicService.isLoggedin = true;
         // setting the token to the localStorage 
-        this.publicService.setDataAfterLogin(res.token, res.userName);
+        this.publicService.setDataAfterLogin(res.token, res.userName, res.userType);
 
+        if(res.userType == "FarmOwner" || res.userType == "Admin"){
+          // opening the admin site..
+          this.router.navigate(['/admin']);
+        }
+        else{
+          this.router.navigate(['/home']);
+        }
 
+        this.alertify.success("Login Successful");
 
-        window.alert(res);
+        
       }, (error:any)=>{
-        window.alert("login Failed!!");
+        this.alertify.error("login Failed!!");
       });
     }
     else{
-      window.alert("Invalid Form!!");
+      this.alertify.warning("Invalid Form!!");
     }
   }
 }

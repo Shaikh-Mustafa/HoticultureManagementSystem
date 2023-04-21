@@ -21,7 +21,7 @@ namespace HMS_BackEnd.Controllers
 
         [AllowAnonymous]
         [HttpPost("login")]
-        public async Task<IActionResult> Login(LoginReqDTO loginReq)
+        public async Task<ActionResult> Login(LoginReqDTO loginReq)
         {
             var user = await uow.UserRepository.Authenticate(loginReq.UserName, loginReq.Password);
 
@@ -33,8 +33,63 @@ namespace HMS_BackEnd.Controllers
             var loginRes = new LoginResDTO();
             loginRes.UserName = user.userName;
             loginRes.Token = CreateJWT(user);
+            loginRes.UserType = user.userType;
 
             return Ok(loginRes);
+        }
+
+        [HttpPost("RegisterAsFarmOwner")]
+        public async Task<ActionResult> RegisterAsFarmOwner(FarmOwner fm)
+        {
+            try
+            {
+                //first adding data to FarmOwner..
+                var farmOwner = await uow.FarmOwnerRepository.addFarmOwner(fm);
+
+                // then adding to the users
+
+                var newUser = new User();
+
+                newUser.userName = fm.firstName + " " + fm.lastName;
+                newUser.userType = "FarmOwner";
+                newUser.password = fm.password;
+                newUser.CreatedAt = DateTime.Now;
+
+
+                uow.UserRepository.CreateUser(newUser);
+
+                uow.SaveAsync();
+
+                return Ok(farmOwner);
+            }
+            catch (Exception ex)
+            {
+               return BadRequest(ex.Message);
+            }
+           
+        }
+
+        [HttpPost("RegisterAsBuyer")]
+        public async Task<ActionResult> RegisterAsBuyer(buyer by)
+        {
+            // first adding data to Buyers....
+           var b = await uow.BuyerRepository.addBuyer(by);
+
+            // then adding to the users
+
+            var newUser = new User();
+
+            newUser.userName = by.firstName + " " + by.lastName;
+            newUser.userType = "Buyer";
+            newUser.password = by.password;
+            newUser.CreatedAt = DateTime.Now;
+
+
+            uow.UserRepository.CreateUser(newUser);
+
+            uow.SaveAsync();
+
+            return Ok(b);
         }
 
         private string CreateJWT(User user)

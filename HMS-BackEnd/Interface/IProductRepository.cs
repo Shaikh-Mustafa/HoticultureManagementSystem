@@ -7,7 +7,6 @@ namespace HMS_BackEnd.Interface
         List<ProductDTO> getAllProducts ();
         Task<ProductDTO> getProductById (int id);
         Task<ProductDTO> addProduct(ProductDTO product);
-        Task<ProductDTO> deleteProduct(int id);
-        
+        Task<ProductDTO> deleteProduct(int id);        
     }
 }

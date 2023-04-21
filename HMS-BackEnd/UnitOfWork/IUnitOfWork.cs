@@ -8,6 +8,8 @@ namespace HMS_BackEnd.UnitOfWork
 
         IProductRepository ProductRepository { get; }
         IStockRepository StockRepository { get; }
+        IFarmOwnerRepository FarmOwnerRepository { get; }
+        IBuyerRepository BuyerRepository { get; }
 
         Task<bool> SaveAsync();
     }
